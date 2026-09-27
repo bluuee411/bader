@@ -336,7 +336,7 @@
 }
 
 
-/* ================= HAT ================= */
+/* ================= BIRTHDAY HAT ================= */
 
 .hat {
     position: absolute;
@@ -345,17 +345,14 @@
     height: 0;
 
     left: 50%;
+    top: 5px;
 
-    /* Put the hat above the head, NOT over the face */
-    top: -20px;
+    transform: translateX(-50%) rotate(-7deg);
 
-    transform:
-        translateX(-50%)
-        rotate(-7deg);
-
-    border-left: 55px solid transparent;
-    border-right: 55px solid transparent;
-    border-bottom: 125px solid #75aee0;
+    /* taller but narrower */
+    border-left: 48px solid transparent;
+    border-right: 48px solid transparent;
+    border-bottom: 115px solid #75aee0;
 
     z-index: 100;
 
@@ -367,18 +364,20 @@
 }
 
 
-/* White band at bottom of hat */
+/* White band at the BOTTOM of the hat */
 
 .hat::before {
     content: "";
 
     position: absolute;
 
-    width: 108px;
-    height: 16px;
+    width: 96px;
+    height: 15px;
 
-    left: -54px;
-    top: 103px;
+    left: -48px;
+
+    /* IMPORTANT: this is near the bottom of the triangle */
+    top: 96px;
 
     background: #eaf6ff;
 
@@ -388,7 +387,7 @@
 }
 
 
-/* White ball */
+/* White ball at the top */
 
 .hat-ball {
     position: absolute;
