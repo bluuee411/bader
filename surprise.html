@@ -256,18 +256,12 @@
 
 
         /* ================= PHOTO AREA ================= */
-
-        .photo-area {
-            position: relative;
-
-            width: 320px;
-            height: 330px;
-
-            margin: 0 auto;
-
-            z-index: 20;
-        }
-
+.photo-area {
+    position: relative;
+    width: 330px;
+    height: 330px;
+    margin: 0 auto;
+}
 
         /* ================= DECORATIVE STARS AROUND PHOTO ================= */
 
@@ -331,30 +325,15 @@
 
         .photo-frame {
             position: absolute;
-
-            top: 35px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
             width: 275px;
             height: 275px;
-
-            overflow: hidden;
-
+            left: 50%;
+            top: 45px;
+            transform: translateX(-50%);
             border-radius: 50%;
-
-            border: 5px solid rgba(210,235,255,.9);
-
-            box-shadow:
-                0 0 20px rgba(130,200,255,.5),
-                0 0 50px rgba(70,150,230,.2);
-
-            background: #071b38;
-
-            z-index: 30;
+            overflow: hidden;
+            z-index: 10;
         }
-
         .photo-frame img {
             display: block;
 
