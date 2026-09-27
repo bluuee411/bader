@@ -373,35 +373,34 @@
 
         /* ================= TALL BIRTHDAY HAT ================= */
 
-.birthday-hat {
+.hat {
     position: absolute;
 
     width: 0;
     height: 0;
 
     left: 50%;
-    top: -5px;
+    top: -10px;
 
-    transform:
-        translateX(-50%)
-        rotate(-7deg);
+    transform: translateX(-50%) rotate(-7deg);
 
     border-left: 62px solid transparent;
     border-right: 62px solid transparent;
     border-bottom: 135px solid #75aee0;
 
-    z-index: 999;
+    z-index: 9999;
+
+    pointer-events: none;
 
     filter:
         drop-shadow(0 5px 8px rgba(0,0,0,.5))
         drop-shadow(0 0 8px rgba(120,190,255,.4));
-
-    pointer-events: none;
 }
 
-/* white band */
 
-.birthday-hat::before {
+/* White band */
+
+.hat::before {
     content: "";
 
     position: absolute;
@@ -419,7 +418,8 @@
     transform: rotate(2deg);
 }
 
-/* hat ball */
+
+/* White ball */
 
 .hat-ball {
     position: absolute;
@@ -438,8 +438,6 @@
         0 0 12px white,
         0 0 25px rgba(180,220,255,.9);
 }
-
-
        /* ================= SMALL BLUE CAKE ================= */
 
 .cake-area {
@@ -611,52 +609,48 @@
 
         /* ================= ARABIC LETTER ================= */
 
-        .letter {
-            position: relative;
+        /* ================= WHITE LETTER ================= */
 
-            z-index: 20;
+.letter {
+    width: min(650px, 95%);
 
-            width: min(650px, 95%);
+    margin: 0 auto;
 
-            margin: 10px auto 0;
+    padding: 35px 30px;
 
-            padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.96);
 
-            background:
-                rgba(8, 34, 68, .72);
+    border: 1px solid rgba(180, 215, 240, .8);
 
-            border: 1px solid rgba(160,210,255,.2);
+    border-radius: 18px;
 
-            border-radius: 18px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.3);
 
-            box-shadow:
-                0 15px 40px rgba(0,0,0,.35),
-                inset 0 0 20px rgba(130,200,255,.04);
+    direction: rtl;
+}
 
-            direction: rtl;
-        }
+.letter-title {
+    font-size: 25px;
 
-        .letter-title {
-            font-size: 25px;
+    color: #315f88;
 
-            color: #e8f5ff;
+    margin-bottom: 25px;
 
-            margin-bottom: 25px;
+    line-height: 1.6;
+}
 
-            line-height: 1.6;
-        }
+.letter-text {
+    font-family: Arial, sans-serif;
 
-        .letter-text {
-            font-family: Arial, sans-serif;
+    font-size: 20px;
 
-            font-size: 20px;
+    line-height: 2.2;
 
-            line-height: 2.2;
+    color: #294b68;
 
-            color: #dceeff;
-
-            text-align: right;
-        }
+    text-align: right;
+}
 
 
         /* ================= PHONE ================= */
@@ -786,27 +780,40 @@
             <div class="big-star four">✧</div>
 
 
-            <!-- Birthday hat -->
+            <div class="photo-area">
 
-            <div class="hat">
+    <!-- Decorative stars -->
 
-                <div class="hat-ball"></div>
+    <div class="big-star one">✦</div>
 
-            </div>
+    <div class="big-star two">✧</div>
+
+    <div class="big-star three">✦</div>
+
+    <div class="big-star four">✧</div>
 
 
-            <!-- His picture -->
+    <!-- Birthday hat -->
 
-            <div class="photo-frame">
+    <div class="hat">
 
-                <img
-                    src="./photo.png"
-                    alt="Bader"
-                >
+        <div class="hat-ball"></div>
 
-            </div>
+    </div>
 
-        </div>
+
+    <!-- His picture -->
+
+    <div class="photo-frame">
+
+        <img
+            src="./photo.png"
+            alt="Bader"
+        >
+
+    </div>
+
+</div>
 
 
         <!-- ================= BIRTHDAY CAKE ================= -->
