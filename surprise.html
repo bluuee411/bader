@@ -404,11 +404,9 @@
        /* ================= SMALL BLUE CAKE ================= */
 
 .cake-area {
-    position: relative;
     width: 220px;
-    height: 200px;
     margin: 0 auto 25px;
-    z-index: 20;
+    text-align: center;
 }
 
 .cake {
@@ -578,11 +576,10 @@
 /* ================= BLOW OUT BUTTON ================= */
 
 #blowButton {
-    position: relative;
-    z-index: 50;
+    display: block !important;
+    position: static !important;
 
-    display: block;
-    margin: 15px auto 0;
+    margin: 30px auto 0 !important;
 
     padding: 13px 26px;
 
@@ -591,12 +588,14 @@
     font-weight: 600;
 
     color: white;
-    background: rgba(70, 130, 190, 0.35);
+    background: rgba(70, 130, 190, 0.5);
 
     border: 1px solid rgba(190, 225, 255, 0.8);
     border-radius: 30px;
 
     cursor: pointer;
+
+    z-index: 100;
 }
 #blowButton:hover {
     transform: translateY(-3px);
@@ -613,20 +612,8 @@
 }
 
 #blowMessage {
-    position: relative;
-    z-index: 50;
-
+    position: static !important;
     margin-top: 10px;
-
-    min-height: 20px;
-
-    font-size: 14px;
-    letter-spacing: 1px;
-
-    color: #d8efff;
-
-    text-shadow:
-        0 0 8px rgba(150, 210, 255, 0.6);
 }
         /* ================= ARABIC LETTER ================= */
 
@@ -822,29 +809,25 @@
 
        <div class="cake-area">
 
-    <div class="cake">
+            <div class="cake">
+                <div class="cake-top"></div>
 
-        <div class="cake-top"></div>
+                <div class="frosting"></div>
 
-        <div class="frosting"></div>
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
 
-        <div class="candle">
-            <div class="flame"></div>
+                <div class="cake-line"></div>
+            </div>
+
+            <div class="cake-plate"></div>
+
+            <button id="blowButton">🎤 Blow out the candle</button>
+
+            <p id="blowMessage"></p>
+
         </div>
-
-        <div class="cake-line"></div>
-
-    </div>
-
-    <!-- BUTTON IS UNDER THE CAKE -->
-    <button id="blowButton">🎤 Blow out the candle</button>
-
-    <p id="blowMessage"></p>
-
-    <div class="cake-plate"></div>
-
-</div>
-
         <!-- ================= ARABIC LETTER ================= -->
 
         <div class="letter">
