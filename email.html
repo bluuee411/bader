@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Message For You</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(35, 82, 150, .22), transparent 35%),
+                radial-gradient(circle at 20% 20%, rgba(65, 115, 190, .12), transparent 25%),
+                linear-gradient(180deg, #010817 0%, #03152e 50%, #061d3d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ================= STARRY NIGHT ================= */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 9px white;
+            animation: twinkle 2.5s infinite ease-in-out;
+        }
+
+        .star:nth-child(1) {
+            top: 5%;
+            left: 8%;
+        }
+
+        .star:nth-child(2) {
+            top: 12%;
+            left: 18%;
+            animation-delay: .7s;
+        }
+
+        .star:nth-child(3) {
+            top: 8%;
+            left: 35%;
+            animation-delay: 1.3s;
+        }
+
+        .star:nth-child(4) {
+            top: 17%;
+            left: 55%;
+            animation-delay: .3s;
+        }
+
+        .star:nth-child(5) {
+            top: 7%;
+            left: 78%;
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(6) {
+            top: 20%;
+            left: 92%;
+            animation-delay: .5s;
+        }
+
+        .star:nth-child(7) {
+            top: 30%;
+            left: 5%;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(8) {
+            top: 35%;
+            left: 15%;
+            animation-delay: .4s;
+        }
+
+        .star:nth-child(9) {
+            top: 28%;
+            left: 85%;
+            animation-delay: 1.7s;
+        }
+
+        .star:nth-child(10) {
+            top: 42%;
+            left: 95%;
+            animation-delay: .8s;
+        }
+
+        .star:nth-child(11) {
+            top: 55%;
+            left: 4%;
+            animation-delay: 1.4s;
+        }
+
+        .star:nth-child(12) {
+            top: 65%;
+            left: 10%;
+            animation-delay: .2s;
+        }
+
+        .star:nth-child(13) {
+            top: 75%;
+            left: 4%;
+            animation-delay: 1.1s;
+        }
+
+        .star:nth-child(14) {
+            top: 85%;
+            left: 17%;
+            animation-delay: .6s;
+        }
+
+        .star:nth-child(15) {
+            top: 92%;
+            left: 40%;
+            animation-delay: 1.9s;
+        }
+
+        .star:nth-child(16) {
+            top: 80%;
+            left: 90%;
+            animation-delay: .4s;
+        }
+
+        .star:nth-child(17) {
+            top: 68%;
+            left: 94%;
+            animation-delay: 1.6s;
+        }
+
+        .star:nth-child(18) {
+            top: 48%;
+            left: 83%;
+            animation-delay: .9s;
+        }
+
+        .star:nth-child(19) {
+            top: 58%;
+            left: 73%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(20) {
+            top: 88%;
+            left: 70%;
+            animation-delay: .3s;
+        }
+
+        .star:nth-child(21) {
+            top: 40%;
+            left: 28%;
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(22) {
+            top: 72%;
+            left: 30%;
+            animation-delay: .5s;
+        }
+
+        .star:nth-child(23) {
+            top: 22%;
+            left: 42%;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(24) {
+            top: 90%;
+            left: 55%;
+            animation-delay: .7s;
+        }
+
+        .star:nth-child(25) {
+            top: 50%;
+            left: 18%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(26) {
+            top: 15%;
+            left: 68%;
+            animation-delay: .9s;
+        }
+
+        .star:nth-child(27) {
+            top: 33%;
+            left: 58%;
+            animation-delay: 1.7s;
+        }
+
+        .star:nth-child(28) {
+            top: 62%;
+            left: 48%;
+            animation-delay: .4s;
+        }
+
+        .star:nth-child(29) {
+            top: 78%;
+            left: 62%;
+            animation-delay: 1.1s;
+        }
+
+        .star:nth-child(30) {
+            top: 94%;
+            left: 85%;
+            animation-delay: .2s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: .2;
+                transform: scale(.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.6);
+            }
+        }
+
+        /* ================= MOON ================= */
+
+        .moon {
+            position: fixed;
+            top: 7%;
+            right: 9%;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #f7faff;
+            box-shadow:
+                0 0 20px rgba(255,255,255,.35),
+                0 0 50px rgba(180,220,255,.12);
+            z-index: 1;
+        }
+
+        .moon::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 18px;
+            width: 75px;
+            height: 75px;
+            background: #020a1c;
+            border-radius: 50%;
+        }
+
+        /* ================= EMAIL BOX ================= */
+
+        .email-box {
+            position: relative;
+            z-index: 5;
+
+            width: min(720px, 94vw);
+            min-height: 500px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(132, 195, 235, .97),
+                    rgba(83, 155, 210, .97)
+                );
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, .5),
+                0 0 35px rgba(90, 170, 240, .15),
+                inset 0 0 25px rgba(255,255,255,.15);
+
+            color: #071a35;
+        }
+
+        .email-header {
+            border-bottom: 1px solid rgba(0,0,0,.15);
+            padding-bottom: 22px;
+            margin-bottom: 25px;
+        }
+
+        .from,
+        .to {
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .from span,
+        .to span {
+            font-weight: 600;
+        }
+
+        .message-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .message {
+            background: rgba(255,255,255,.18);
+            border-radius: 12px;
+            padding: 28px;
+            min-height: 250px;
+            border: 1px solid rgba(255,255,255,.25);
+        }
+
+        .message-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* ================= ATTACHMENT ================= */
+
+        .attachment {
+            display: flex;
+            justify-content: center;
+            margin-top: 55px;
+        }
+
+        .attachment button {
+            border: none;
+            background: #eef8ff;
+            color: #174c78;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 17px;
+            padding: 15px 32px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+            box-shadow: 0 7px 18px rgba(0,0,0,.18);
+        }
+
+        .attachment button:hover {
+            transform: translateY(-4px);
+            background: white;
+            box-shadow: 0 12px 25px rgba(0,0,0,.25);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 18px;
+            }
+
+            .moon {
+                width: 55px;
+                height: 55px;
+                right: 7%;
+            }
+
+            .moon::after {
+                width: 55px;
+                height: 55px;
+                left: 14px;
+            }
+
+            .email-box {
+                padding: 23px;
+                min-height: 480px;
+            }
+
+            .from,
+            .to,
+            .message-label {
+                font-size: 16px;
+            }
+
+            .message-text {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= STARS ================= -->
+
+    <div class="stars">
+
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+
+    </div>
+
+    <div class="moon"></div>
+
+
+    <!-- ================= EMAIL ================= -->
+
+    <div class="email-box">
+
+        <div class="email-header">
+
+            <div class="from">
+                <span>From :</span> Shosho
+            </div>
+
+            <div class="to">
+                <span>To :</span> Bader
+            </div>
+
+        </div>
+
+
+        <div class="message-label">
+            Message :
+        </div>
+
+
+        <div class="message">
+
+            <div class="message-text">
+                Check out this awesome surprise for YOU!
+            </div>
+
+
+            <div class="attachment">
+
+                <button onclick="openSurprise()">
+                    see attachment
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function openSurprise() {
+            window.location.href = "surprise.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Baby Boy</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(65, 115, 190, .22), transparent 35%),
+                radial-gradient(circle at 20% 15%, rgba(90, 140, 220, .12), transparent 25%),
+                linear-gradient(180deg, #010817 0%, #03152e 50%, #061d3d 100%);
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ================= STARS ================= */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 9px white;
+            animation: twinkle 2.5s infinite ease-in-out;
+        }
+
+        .star:nth-child(1) { top: 5%; left: 8%; }
+        .star:nth-child(2) { top: 12%; left: 18%; animation-delay: .7s; }
+        .star:nth-child(3) { top: 8%; left: 35%; animation-delay: 1.3s; }
+        .star:nth-child(4) { top: 17%; left: 55%; animation-delay: .3s; }
+        .star:nth-child(5) { top: 7%; left: 78%; animation-delay: 1.8s; }
+        .star:nth-child(6) { top: 20%; left: 92%; animation-delay: .5s; }
+        .star:nth-child(7) { top: 30%; left: 5%; animation-delay: 1.2s; }
+        .star:nth-child(8) { top: 35%; left: 15%; animation-delay: .4s; }
+        .star:nth-child(9) { top: 28%; left: 85%; animation-delay: 1.7s; }
+        .star:nth-child(10) { top: 42%; left: 95%; animation-delay: .8s; }
+        .star:nth-child(11) { top: 55%; left: 4%; animation-delay: 1.4s; }
+        .star:nth-child(12) { top: 65%; left: 10%; animation-delay: .2s; }
+        .star:nth-child(13) { top: 75%; left: 4%; animation-delay: 1.1s; }
+        .star:nth-child(14) { top: 85%; left: 17%; animation-delay: .6s; }
+        .star:nth-child(15) { top: 92%; left: 40%; animation-delay: 1.9s; }
+        .star:nth-child(16) { top: 80%; left: 90%; animation-delay: .4s; }
+        .star:nth-child(17) { top: 68%; left: 94%; animation-delay: 1.6s; }
+        .star:nth-child(18) { top: 48%; left: 83%; animation-delay: .9s; }
+        .star:nth-child(19) { top: 58%; left: 73%; animation-delay: 1.5s; }
+        .star:nth-child(20) { top: 88%; left: 70%; animation-delay: .3s; }
+        .star:nth-child(21) { top: 40%; left: 28%; animation-delay: 1.8s; }
+        .star:nth-child(22) { top: 72%; left: 30%; animation-delay: .5s; }
+        .star:nth-child(23) { top: 22%; left: 42%; animation-delay: 1.2s; }
+        .star:nth-child(24) { top: 90%; left: 55%; animation-delay: .7s; }
+        .star:nth-child(25) { top: 50%; left: 18%; animation-delay: 1.5s; }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: .25;
+                transform: scale(.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* ================= PAGE ================= */
+
+        .page {
+            position: relative;
+            z-index: 2;
+            width: min(900px, 94vw);
+            margin: auto;
+            padding: 65px 0 100px;
+            text-align: center;
+        }
+
+        .small-title {
+            position: relative;
+            z-index: 20;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            letter-spacing: 4px;
+            opacity: .7;
+            direction: ltr;
+            margin-bottom: 85px;
+            display: block;
+        }
+
+        /* ================= PHOTO AREA ================= */
+
+        .photo-area {
+            position: relative;
+            width: 340px;
+            margin: 0 auto 65px;
+            z-index: 3;
+        }
+
+        .photo-frame {
+            width: 275px;
+            height: 275px;
+            margin: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(255,255,255,.9);
+            background: #b8d8f2;
+            box-shadow:
+                0 0 30px rgba(120,190,255,.45),
+                0 15px 40px rgba(0,0,0,.4);
+            position: relative;
+            z-index: 3;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ================= BIRTHDAY HAT ================= */
+
+        .hat {
+            position: absolute;
+            pointer-events: none;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 120px solid #6ea9dd;
+            top: -76px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+            z-index: 6;
+            filter: drop-shadow(0 6px 8px rgba(0,0,0,.3));
+        }
+
+        .hat::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 17px;
+            background: #f1f8ff;
+            border-radius: 50%;
+            left: -50px;
+            bottom: -121px;
+        }
+
+        .hat::after {
+            content: "★";
+            position: absolute;
+            color: white;
+            font-size: 23px;
+            left: -11px;
+            top: 52px;
+        }
+
+        .hat-ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            top: -14px;
+            left: -10px;
+            box-shadow: 0 0 15px white;
+            z-index: 7;
+        }
+
+        /* ================= DECORATIVE STARS ================= */
+
+        .big-star {
+            position: absolute;
+            color: white;
+            font-size: 38px;
+            text-shadow: 0 0 15px rgba(255,255,255,.8);
+            animation: floatStar 3s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .big-star.one {
+            top: 45px;
+            left: 0;
+        }
+
+        .big-star.two {
+            top: 125px;
+            right: -5px;
+            font-size: 30px;
+            animation-delay: 1s;
+        }
+
+        .big-star.three {
+            bottom: 30px;
+            left: 20px;
+            font-size: 27px;
+            animation-delay: 1.6s;
+        }
+
+        .big-star.four {
+            bottom: 5px;
+            right: 15px;
+            font-size: 35px;
+            animation-delay: .5s;
+        }
+
+        @keyframes floatStar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: .7;
+            }
+
+            50% {
+                transform: translateY(-9px) rotate(10deg);
+                opacity: 1;
+            }
+        }
+
+        /* ================= REALISTIC SMALL CAKE ================= */
+
+        .cake {
+            position: absolute;
+            right: -8px;
+            bottom: -48px;
+            width: 105px;
+            height: 72px;
+            z-index: 8;
+            filter: drop-shadow(0 8px 9px rgba(0,0,0,.35));
+        }
+
+        /* Cake plate */
+
+        .cake::before {
+            content: "";
+            position: absolute;
+            width: 125px;
+            height: 15px;
+            bottom: -4px;
+            left: -10px;
+            background: #dcefff;
+            border-radius: 50%;
+            box-shadow: 0 4px 7px rgba(0,0,0,.25);
+        }
+
+        /* Cake body */
+
+        .cake-body {
+            position: absolute;
+            width: 100px;
+            height: 54px;
+            bottom: 8px;
+            left: 3px;
+            background: linear-gradient(
+                90deg,
+                #b7d9ef 0%,
+                #e9f6ff 25%,
+                #c9e3f5 50%,
+                #f1f9ff 75%,
+                #b7d9ef 100%
+            );
+            border-radius: 7px 7px 12px 12px;
+            box-shadow:
+                inset 0 -8px 0 rgba(70,130,180,.13),
+                inset 0 4px 0 rgba(255,255,255,.7);
+        }
+
+        /* Cake top frosting */
+
+        .frosting {
+            position: absolute;
+            width: 108px;
+            height: 22px;
+            left: -1px;
+            top: -9px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 3px 5px rgba(0,0,0,.15);
+            z-index: 3;
+        }
+
+        .frosting::after {
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 18px;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            left: 17px;
+            top: 8px;
+            box-shadow:
+                23px 1px 0 white,
+                47px -1px 0 white,
+                72px 1px 0 white;
+        }
+
+        /* Cake middle line */
+
+        .cake-line {
+            position: absolute;
+            width: 87px;
+            height: 4px;
+            left: 9px;
+            top: 29px;
+            background: rgba(90,145,190,.35);
+            border-radius: 5px;
+            z-index: 4;
+        }
+
+        /* Candle */
+
+        .candle {
+            position: absolute;
+            width: 7px;
+            height: 25px;
+            background: repeating-linear-gradient(
+                135deg,
+                #ffffff 0px,
+                #ffffff 4px,
+                #76aede 4px,
+                #76aede 7px
+            );
+            top: -34px;
+            left: 49px;
+            border-radius: 3px;
+            z-index: 6;
+        }
+
+        /* Flame */
+
+        .flame {
+            position: absolute;
+            width: 11px;
+            height: 17px;
+            top: -51px;
+            left: 47px;
+            background: #fff;
+            border-radius: 50% 50% 50% 50%;
+            transform: rotate(2deg);
+            box-shadow:
+                0 0 7px #fff,
+                0 0 15px rgba(180,220,255,.9);
+            z-index: 7;
+            animation: flame 1s infinite ease-in-out;
+        }
+
+        @keyframes flame {
+            0%, 100% {
+                transform: rotate(-5deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(5deg) scale(1.12);
+            }
+        }
+
+        /* ================= LETTER ================= */
+
+        .letter {
+            background: rgba(238,247,255,.97);
+            color: #173450;
+            width: min(800px, 94vw);
+            margin: 0 auto;
+            padding: 48px 55px 55px;
+            border-radius: 8px;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.3),
+                0 0 35px rgba(150,210,255,.12);
+            position: relative;
+            text-align: right;
+        }
+
+        .letter::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(80,130,175,.15);
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        .letter-title {
+            text-align: center;
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 29px;
+            color: #234d73;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .letter-text {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 22px;
+            line-height: 2.15;
+            font-weight: 400;
+        }
+
+        .letter-text p {
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            margin-top: 35px;
+            text-align: left;
+            font-size: 21px;
+            color: #476b8c;
+        }
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding-top: 45px;
+            }
+
+            .small-title {
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+
+            .photo-area {
+                width: 290px;
+            }
+
+            .photo-frame {
+                width: 240px;
+                height: 240px;
+            }
+
+            .letter {
+                padding: 35px 25px 40px;
+            }
+
+            .letter-text {
+                font-size: 19px;
+                line-height: 2;
+            }
+
+            .letter-title {
+                font-size: 25px;
+            }
+
+            .cake {
+                right: -3px;
+            }
+
+            .big-star.one {
+                left: -5px;
+            }
+
+            .big-star.two {
+                right: -10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= BACKGROUND STARS ================= -->
+
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+
+    <main class="page">
+
+        <!-- This is ABOVE the picture -->
+
+        <div class="small-title">
+            A LITTLE SOMETHING FOR YOU
+        </div>
+
+
+        <!-- ================= HIS BABY PHOTO ================= -->
+
+        <div class="photo-area">
+
+            <!-- Decorative stars -->
+
+            <div class="big-star one">✦</div>
+            <div class="big-star two">✧</div>
+            <div class="big-star three">✦</div>
+            <div class="big-star four">✧</div>
+
+
+            <!-- Birthday hat -->
+
+            <div class="hat">
+                <div class="hat-ball"></div>
+            </div>
+
+
+            <!-- His picture -->
+
+            <div class="photo-frame">
+                <img src="bader.png" alt="Bader">
+            </div>
+
+
+            <!-- Small realistic cake -->
+
+            <div class="cake">
+
+                <div class="cake-body">
+
+                    <div class="frosting"></div>
+
+                    <div class="cake-line"></div>
+
+                </div>
+
+                <div class="candle"></div>
+
+                <div class="flame"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= LETTER ================= -->
+
+        <div class="letter">
+
+            <div class="letter-title">
+                إلى محبوبي وشريك عمري
+            </div>
+
+            <div class="letter-text">
+
+                <p>
+                    كل عام وانت بخير يامن اختصر الحب كله في عينيه، وجعل لحياتي طعماً لا يشبه الا حضوره.
+                </p>
+
+                <p>
+                    في مثل هذا اليوم، لم يولد رجل عادي، بل ولد النصيب الاجمل، والسند الاقوى، والحبيب الذي لا يشبهه احد.
+                </p>
+
+                <p>
+                    وأسال الله ان نبقى معاً تحت ظل هذا الحب لأيام، شهور، ولاعوام لا تُعد
+                </p>
+
+                <div class="signature">
+                    لك مني كل الحب
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
