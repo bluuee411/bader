@@ -256,101 +256,87 @@
 
 
         /* ================= PHOTO AREA ================= */
+
 .photo-area {
     position: relative;
-    width: 330px;
-    height: 330px;
+    width: 320px;
+    height: 320px;
     margin: 0 auto;
 }
 
-        /* ================= DECORATIVE STARS AROUND PHOTO ================= */
+/* Decorative stars */
 
-        .big-star {
-            position: absolute;
+.big-star {
+    position: absolute;
+    color: white;
+    font-size: 28px;
+    text-shadow:
+        0 0 10px white,
+        0 0 20px #8dc7ff;
+    z-index: 2;
+}
 
-            color: white;
+.big-star.one {
+    top: 80px;
+    left: 0;
+}
 
-            font-size: 28px;
+.big-star.two {
+    top: 150px;
+    right: 0;
+}
 
-            text-shadow:
-                0 0 10px white,
-                0 0 20px #8dc7ff;
+.big-star.three {
+    top: 20px;
+    right: 20px;
+}
 
-            z-index: 10;
-
-            animation: starFloat 3s ease-in-out infinite;
-        }
-
-        .big-star.one {
-            top: 70px;
-            left: 5px;
-        }
-
-        .big-star.two {
-            top: 150px;
-            right: 0;
-            font-size: 22px;
-            animation-delay: .8s;
-        }
-
-        .big-star.three {
-            top: 15px;
-            right: 25px;
-            font-size: 20px;
-            animation-delay: 1.2s;
-        }
-
-        .big-star.four {
-            bottom: 35px;
-            left: 20px;
-            font-size: 18px;
-            animation-delay: 1.7s;
-        }
-
-        @keyframes starFloat {
-
-            0%, 100% {
-                transform: translateY(0);
-                opacity: .7;
-            }
-
-            50% {
-                transform: translateY(-8px);
-                opacity: 1;
-            }
-        }
+.big-star.four {
+    bottom: 20px;
+    left: 20px;
+}
 
 
-        /* ================= PHOTO ================= */
+/* ================= PHOTO ================= */
 
-        .photo-frame {
-            position: absolute;
-            width: 275px;
-            height: 275px;
-            left: 50%;
-            top: 45px;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            overflow: hidden;
-            z-index: 10;
-        }
-        .photo-frame img {
-            display: block;
+.photo-frame {
+    position: absolute;
 
-            width: 275px;
-            height: 275px;
+    width: 275px;
+    height: 275px;
 
-            object-fit: cover;
+    top: 35px;
+    left: 50%;
 
-            border-radius: 50%;
+    transform: translateX(-50%);
 
-            position: relative;
+    border-radius: 50%;
+    overflow: hidden;
 
-            z-index: 31;
-        }
+    background: #071b38;
+
+    border: 5px solid rgba(210,235,255,.9);
+
+    box-shadow:
+        0 0 20px rgba(130,200,255,.5),
+        0 0 50px rgba(70,150,230,.2);
+
+    z-index: 10;
+}
+
+.photo-frame img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
 
 
-        /* ================= TALL BIRTHDAY HAT ================= */
+/* ================= HAT ================= */
 
 .hat {
     position: absolute;
@@ -359,36 +345,40 @@
     height: 0;
 
     left: 50%;
-    top: -10px;
 
-    transform: translateX(-50%) rotate(-7deg);
+    /* Put the hat above the head, NOT over the face */
+    top: -20px;
 
-    border-left: 62px solid transparent;
-    border-right: 62px solid transparent;
-    border-bottom: 135px solid #75aee0;
+    transform:
+        translateX(-50%)
+        rotate(-7deg);
 
-    z-index: 9999;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 125px solid #75aee0;
+
+    z-index: 100;
 
     pointer-events: none;
 
     filter:
-        drop-shadow(0 5px 8px rgba(0,0,0,.5))
+        drop-shadow(0 5px 8px rgba(0,0,0,.4))
         drop-shadow(0 0 8px rgba(120,190,255,.4));
 }
 
 
-/* White band */
+/* White band at bottom of hat */
 
 .hat::before {
     content: "";
 
     position: absolute;
 
-    width: 120px;
-    height: 17px;
+    width: 108px;
+    height: 16px;
 
-    left: -60px;
-    top: 110px;
+    left: -54px;
+    top: 103px;
 
     background: #eaf6ff;
 
@@ -403,19 +393,19 @@
 .hat-ball {
     position: absolute;
 
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+
+    left: -9px;
+    top: -13px;
 
     background: white;
 
     border-radius: 50%;
 
-    left: -10px;
-    top: -14px;
-
     box-shadow:
         0 0 12px white,
-        0 0 25px rgba(180,220,255,.9);
+        0 0 25px rgba(180,220,255,.8);
 }
        /* ================= SMALL BLUE CAKE ================= */
 
@@ -588,16 +578,21 @@
 
         /* ================= ARABIC LETTER ================= */
 
-        /* ================= WHITE LETTER ================= */
+        /* ================= LETTER ================= */
 
 .letter {
+    position: relative;
+
+    display: block;
+
     width: min(650px, 95%);
+    max-width: 650px;
 
     margin: 0 auto;
 
     padding: 35px 30px;
 
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.97);
 
     border: 1px solid rgba(180, 215, 240, .8);
 
@@ -607,6 +602,8 @@
         0 15px 40px rgba(0,0,0,.3);
 
     direction: rtl;
+
+    z-index: 20;
 }
 
 .letter-title {
@@ -620,6 +617,10 @@
 }
 
 .letter-text {
+    display: block;
+
+    width: 100%;
+
     font-family: Arial, sans-serif;
 
     font-size: 20px;
@@ -630,7 +631,6 @@
 
     text-align: right;
 }
-
 
         /* ================= PHONE ================= */
 
@@ -745,51 +745,22 @@
 
         <!-- ================= HIS PHOTO ================= -->
 
-        <div class="photo-area">
-
-
-            <!-- Decorative stars -->
-
-            <div class="big-star one">✦</div>
-
-            <div class="big-star two">✧</div>
-
-            <div class="big-star three">✦</div>
-
-            <div class="big-star four">✧</div>
-
-
-            <div class="photo-area">
-
-    <!-- Decorative stars -->
+       <div class="photo-area">
 
     <div class="big-star one">✦</div>
-
     <div class="big-star two">✧</div>
-
     <div class="big-star three">✦</div>
-
     <div class="big-star four">✧</div>
 
-
-    <!-- Birthday hat -->
-
     <div class="hat">
-
         <div class="hat-ball"></div>
-
     </div>
 
-
-    <!-- His picture -->
-
     <div class="photo-frame">
-
         <img
             src="./photo.png"
             alt="Bader"
         >
-
     </div>
 
 </div>
