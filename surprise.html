@@ -371,289 +371,242 @@
         }
 
 
-        /* ================= BIRTHDAY HAT ================= */
+        /* ================= TALL BIRTHDAY HAT ================= */
 
-        .hat {
-            position: absolute;
+.birthday-hat {
+    position: absolute;
 
-            width: 0;
-            height: 0;
+    width: 0;
+    height: 0;
 
-            border-left: 65px solid transparent;
-            border-right: 65px solid transparent;
-            border-bottom: 105px solid #6fa8dc;
+    left: 50%;
+    top: -5px;
 
-            top: -5px;
-            left: 50%;
+    transform:
+        translateX(-50%)
+        rotate(-7deg);
 
-            transform: translateX(-50%) rotate(-7deg);
+    border-left: 62px solid transparent;
+    border-right: 62px solid transparent;
+    border-bottom: 135px solid #75aee0;
 
-            z-index: 100;
+    z-index: 999;
 
-            pointer-events: none;
+    filter:
+        drop-shadow(0 5px 8px rgba(0,0,0,.5))
+        drop-shadow(0 0 8px rgba(120,190,255,.4));
 
-            filter:
-                drop-shadow(0 5px 8px rgba(0,0,0,.35));
-        }
+    pointer-events: none;
+}
 
-        .hat::before {
-            content: "";
+/* white band */
 
-            position: absolute;
+.birthday-hat::before {
+    content: "";
 
-            width: 115px;
-            height: 15px;
+    position: absolute;
 
-            background: #dceeff;
+    width: 120px;
+    height: 17px;
 
-            border-radius: 50%;
+    left: -60px;
+    top: 110px;
 
-            left: -57px;
-            top: 85px;
+    background: #eaf6ff;
 
-            transform: rotate(2deg);
-        }
+    border-radius: 50%;
 
-        .hat::after {
-            content: "";
+    transform: rotate(2deg);
+}
 
-            position: absolute;
+/* hat ball */
 
-            width: 12px;
-            height: 12px;
+.hat-ball {
+    position: absolute;
 
-            background: #ffffff;
+    width: 20px;
+    height: 20px;
 
-            border-radius: 50%;
+    background: white;
 
-            left: -6px;
-            top: -10px;
+    border-radius: 50%;
 
-            box-shadow:
-                0 0 12px white;
-        }
+    left: -10px;
+    top: -14px;
 
-        .hat-ball {
-            position: absolute;
+    box-shadow:
+        0 0 12px white,
+        0 0 25px rgba(180,220,255,.9);
+}
 
-            width: 14px;
-            height: 14px;
 
-            background: white;
+       /* ================= SMALL BLUE CAKE ================= */
 
-            border-radius: 50%;
+.cake-area {
+    position: relative;
+    width: 220px;
+    height: 125px;
+    margin: 0 auto 25px;
+    z-index: 20;
+}
 
-            left: -7px;
-            top: -12px;
+.cake {
+    position: absolute;
 
-            box-shadow:
-                0 0 12px white;
-        }
+    width: 145px;
+    height: 70px;
 
+    left: 37px;
+    top: 30px;
 
-        /* ================= CAKE ================= */
+    background: linear-gradient(
+        to bottom,
+        #8fc5ed,
+        #4d8fc9
+    );
 
-        .cake-area {
-            position: relative;
+    border-radius: 8px 8px 12px 12px;
 
-            width: 260px;
-            height: 150px;
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.35),
+        0 0 15px rgba(100,180,240,.25);
+}
 
-            margin: -55px auto 30px;
+.cake-top {
+    position: absolute;
 
-            z-index: 40;
-        }
+    width: 145px;
+    height: 32px;
 
-        .cake {
-            position: absolute;
+    top: -15px;
+    left: 0;
 
-            width: 180px;
-            height: 105px;
+    background: #b9ddf7;
 
-            left: 40px;
-            bottom: 30px;
+    border-radius: 50%;
+}
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #f3b9c8 0%,
-                    #e99caf 100%
-                );
+.frosting {
+    position: absolute;
 
-            border-radius: 10px 10px 15px 15px;
+    width: 145px;
+    height: 21px;
 
-            box-shadow:
-                0 12px 20px rgba(0,0,0,.3),
-                inset 0 -8px 0 rgba(0,0,0,.08);
-        }
+    top: -6px;
+    left: 0;
 
+    background: #edf8ff;
 
-        /* Cake top */
+    border-radius: 50%;
 
-        .cake-top {
-            position: absolute;
+    z-index: 3;
+}
 
-            width: 180px;
-            height: 45px;
+.frosting::before {
+    content: "";
 
-            top: -20px;
-            left: 0;
+    position: absolute;
 
-            background: #ffdce5;
+    width: 20px;
+    height: 27px;
 
-            border-radius: 50%;
+    background: #edf8ff;
 
-            box-shadow:
-                inset 0 -5px 0 rgba(0,0,0,.08);
-        }
+    border-radius: 0 0 12px 12px;
 
+    left: 20px;
+    top: 9px;
+}
 
-        /* Frosting */
+.frosting::after {
+    content: "";
 
-        .frosting {
-            position: absolute;
+    position: absolute;
 
-            width: 180px;
-            height: 35px;
+    width: 20px;
+    height: 24px;
 
-            top: -8px;
-            left: 0;
+    background: #edf8ff;
 
-            background: #fff4f7;
+    border-radius: 0 0 12px 12px;
 
-            border-radius: 50%;
+    right: 22px;
+    top: 9px;
+}
 
-            z-index: 3;
-        }
+.cake-line {
+    position: absolute;
 
-        .frosting::before {
-            content: "";
+    width: 100%;
+    height: 6px;
 
-            position: absolute;
+    top: 34px;
+    left: 0;
 
-            width: 25px;
-            height: 35px;
+    background: rgba(230,247,255,.5);
+}
 
-            background: #fff4f7;
+/* ================= SMALL CANDLE ================= */
 
-            border-radius: 0 0 15px 15px;
+.candle {
+    position: absolute;
 
-            left: 25px;
-            top: 15px;
-        }
+    width: 10px;
+    height: 35px;
 
-        .frosting::after {
-            content: "";
+    left: 67px;
+    top: -48px;
 
-            position: absolute;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #d7eaff,
+            #d7eaff 4px,
+            #6fa9d6 4px,
+            #6fa9d6 7px
+        );
 
-            width: 25px;
-            height: 28px;
+    border-radius: 4px;
 
-            background: #fff4f7;
+    z-index: 10;
+}
 
-            border-radius: 0 0 15px 15px;
+.flame {
+    position: absolute;
 
-            right: 30px;
-            top: 15px;
-        }
+    width: 13px;
+    height: 19px;
 
+    left: -1.5px;
+    top: -18px;
 
-        /* Cake decoration */
+    background: #fff1a8;
 
-        .cake-line {
-            position: absolute;
+    border-radius: 50%;
 
-            width: 100%;
-            height: 8px;
+    box-shadow:
+        0 0 8px #fff1a8,
+        0 0 18px rgba(255,220,100,.6);
 
-            top: 48px;
-            left: 0;
+    animation: flicker .8s infinite alternate;
+}
 
-            background: rgba(255,255,255,.55);
+.cake-plate {
+    position: absolute;
 
-            z-index: 4;
-        }
+    width: 180px;
+    height: 17px;
 
+    left: 20px;
+    bottom: 3px;
 
-        /* Candle */
+    background: rgba(210,235,255,.85);
 
-        .candle {
-            position: absolute;
+    border-radius: 50%;
 
-            width: 13px;
-            height: 45px;
-
-            background:
-                repeating-linear-gradient(
-                    45deg,
-                    #d7eaff,
-                    #d7eaff 5px,
-                    #8eb9df 5px,
-                    #8eb9df 9px
-                );
-
-            left: 83px;
-            top: -60px;
-
-            border-radius: 5px;
-
-            z-index: 10;
-        }
-
-
-        /* Flame */
-
-        .flame {
-            position: absolute;
-
-            width: 17px;
-            height: 25px;
-
-            background: #fff1a8;
-
-            border-radius: 50%;
-
-            left: -2px;
-            top: -25px;
-
-            box-shadow:
-                0 0 10px #fff1a8,
-                0 0 22px rgba(255,220,100,.6);
-
-            animation: flicker .8s infinite alternate;
-        }
-
-        @keyframes flicker {
-
-            from {
-                transform: scale(1) rotate(-3deg);
-            }
-
-            to {
-                transform: scale(1.12) rotate(3deg);
-            }
-        }
-
-
-        /* Cake plate */
-
-        .cake-plate {
-            position: absolute;
-
-            width: 220px;
-            height: 25px;
-
-            left: 20px;
-            bottom: 15px;
-
-            background: rgba(220,240,255,.8);
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 8px 15px rgba(0,0,0,.25);
-        }
+    box-shadow:
+        0 6px 12px rgba(0,0,0,.25);
+}
 
 
         /* ================= ARABIC LETTER ================= */
