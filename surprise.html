@@ -550,8 +550,15 @@
         0 0 18px rgba(255,220,100,.6);
 
     animation: flicker .8s infinite alternate;
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.flame.out {
+    opacity: 0;
+    transform: scale(0);
+    animation: none;
+}
 .cake-plate {
     position: absolute;
 
@@ -777,6 +784,9 @@
 
                 </div>
 
+                <button id="blowButton">Blow out the candle</button>
+                <p id="blowMessage"></p>
+
                 <div class="cake-line"></div>
 
             </div>
@@ -809,7 +819,67 @@
 
     </main>
 
+<script>
+const blowButton = document.getElementById("blowButton");
+const flame = document.querySelector(".flame");
+const blowMessage = document.getElementById("blowMessage");
 
+blowButton.addEventListener("click", async () => {
+
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio: true
+        });
+
+        const audioContext = new AudioContext();
+        const analyser = audioContext.createAnalyser();
+
+        const microphone = audioContext.createMediaStreamSource(stream);
+        microphone.connect(analyser);
+
+        analyser.fftSize = 256;
+
+        const data = new Uint8Array(analyser.frequencyBinCount);
+
+        blowMessage.textContent = "💨 Blow into your microphone!";
+
+        function listenForBlow() {
+
+            analyser.getByteFrequencyData(data);
+
+            let total = 0;
+
+            for (let i = 0; i < data.length; i++) {
+                total += data[i];
+            }
+
+            const volume = total / data.length;
+
+            if (volume > 45) {
+
+                flame.classList.add("out");
+
+                blowMessage.textContent = "🎉 You blew out the candle!";
+
+                stream.getTracks().forEach(track => track.stop());
+
+                return;
+            }
+
+            requestAnimationFrame(listenForBlow);
+        }
+
+        listenForBlow();
+
+    } catch (error) {
+
+        blowMessage.textContent =
+            "Please allow microphone access 🎤";
+
+        console.error(error);
+    }
+});
+</script>
 </body>
 
 </html>
