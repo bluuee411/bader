@@ -11,18 +11,28 @@
 
     <style>
 
+        /* ================= RESET ================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+
+        /* ================= BODY ================= */
+
         body {
             min-height: 100vh;
+
             font-family: 'Quicksand', sans-serif;
 
             background:
-                radial-gradient(circle at 50% 30%, rgba(30, 75, 145, .25), transparent 35%),
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(30, 75, 145, .25),
+                    transparent 35%
+                ),
                 linear-gradient(
                     180deg,
                     #010817 0%,
@@ -32,7 +42,9 @@
 
             color: white;
             text-align: center;
+
             overflow-x: hidden;
+
             padding: 40px 20px 70px;
         }
 
@@ -42,15 +54,20 @@
         .stars {
             position: fixed;
             inset: 0;
+
             pointer-events: none;
+
             z-index: 0;
         }
 
         .star {
             position: absolute;
+
             width: 3px;
             height: 3px;
+
             background: white;
+
             border-radius: 50%;
 
             box-shadow: 0 0 10px white;
@@ -58,29 +75,130 @@
             animation: twinkle 2.5s infinite ease-in-out;
         }
 
-        .star:nth-child(1) { top: 5%; left: 8%; }
-        .star:nth-child(2) { top: 12%; left: 20%; animation-delay: .5s; }
-        .star:nth-child(3) { top: 8%; left: 35%; animation-delay: 1s; }
-        .star:nth-child(4) { top: 17%; left: 55%; animation-delay: .3s; }
-        .star:nth-child(5) { top: 7%; left: 78%; animation-delay: 1.5s; }
-        .star:nth-child(6) { top: 20%; left: 92%; animation-delay: .7s; }
-        .star:nth-child(7) { top: 30%; left: 5%; animation-delay: 1.2s; }
-        .star:nth-child(8) { top: 35%; left: 15%; animation-delay: .4s; }
-        .star:nth-child(9) { top: 28%; left: 85%; animation-delay: 1.7s; }
-        .star:nth-child(10) { top: 42%; left: 95%; animation-delay: .8s; }
-        .star:nth-child(11) { top: 55%; left: 4%; animation-delay: 1.4s; }
-        .star:nth-child(12) { top: 65%; left: 10%; animation-delay: .2s; }
-        .star:nth-child(13) { top: 75%; left: 4%; animation-delay: 1.1s; }
-        .star:nth-child(14) { top: 85%; left: 17%; animation-delay: .6s; }
-        .star:nth-child(15) { top: 92%; left: 40%; animation-delay: 1.9s; }
-        .star:nth-child(16) { top: 80%; left: 90%; animation-delay: .4s; }
-        .star:nth-child(17) { top: 68%; left: 94%; animation-delay: 1.6s; }
-        .star:nth-child(18) { top: 48%; left: 83%; animation-delay: .9s; }
-        .star:nth-child(19) { top: 58%; left: 73%; animation-delay: 1.5s; }
-        .star:nth-child(20) { top: 88%; left: 70%; animation-delay: .3s; }
+        .star:nth-child(1) {
+            top: 5%;
+            left: 8%;
+        }
+
+        .star:nth-child(2) {
+            top: 12%;
+            left: 20%;
+            animation-delay: .5s;
+        }
+
+        .star:nth-child(3) {
+            top: 8%;
+            left: 35%;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(4) {
+            top: 17%;
+            left: 55%;
+            animation-delay: .3s;
+        }
+
+        .star:nth-child(5) {
+            top: 7%;
+            left: 78%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(6) {
+            top: 20%;
+            left: 92%;
+            animation-delay: .7s;
+        }
+
+        .star:nth-child(7) {
+            top: 30%;
+            left: 5%;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(8) {
+            top: 35%;
+            left: 15%;
+            animation-delay: .4s;
+        }
+
+        .star:nth-child(9) {
+            top: 28%;
+            left: 85%;
+            animation-delay: 1.7s;
+        }
+
+        .star:nth-child(10) {
+            top: 42%;
+            left: 95%;
+            animation-delay: .8s;
+        }
+
+        .star:nth-child(11) {
+            top: 55%;
+            left: 4%;
+            animation-delay: 1.4s;
+        }
+
+        .star:nth-child(12) {
+            top: 65%;
+            left: 10%;
+            animation-delay: .2s;
+        }
+
+        .star:nth-child(13) {
+            top: 75%;
+            left: 4%;
+            animation-delay: 1.1s;
+        }
+
+        .star:nth-child(14) {
+            top: 85%;
+            left: 17%;
+            animation-delay: .6s;
+        }
+
+        .star:nth-child(15) {
+            top: 92%;
+            left: 40%;
+            animation-delay: 1.9s;
+        }
+
+        .star:nth-child(16) {
+            top: 80%;
+            left: 90%;
+            animation-delay: .4s;
+        }
+
+        .star:nth-child(17) {
+            top: 68%;
+            left: 94%;
+            animation-delay: 1.6s;
+        }
+
+        .star:nth-child(18) {
+            top: 48%;
+            left: 83%;
+            animation-delay: .9s;
+        }
+
+        .star:nth-child(19) {
+            top: 58%;
+            left: 73%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(20) {
+            top: 88%;
+            left: 70%;
+            animation-delay: .3s;
+        }
+
 
         @keyframes twinkle {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: .2;
                 transform: scale(.7);
             }
@@ -96,6 +214,7 @@
 
         .moon {
             position: fixed;
+
             top: 35px;
             right: 8%;
 
@@ -103,11 +222,12 @@
             height: 70px;
 
             background: #f5f9ff;
+
             border-radius: 50%;
 
             box-shadow:
-                0 0 20px rgba(255,255,255,.4),
-                0 0 50px rgba(150,200,255,.15);
+                0 0 20px rgba(255, 255, 255, .4),
+                0 0 50px rgba(150, 200, 255, .15);
 
             z-index: 1;
         }
@@ -116,6 +236,7 @@
             content: "";
 
             position: absolute;
+
             top: -5px;
             left: 18px;
 
@@ -123,107 +244,117 @@
             height: 70px;
 
             background: #010817;
+
             border-radius: 50%;
         }
-/* ================= PARTY TRIANGLE BANNER ================= */
 
-.party-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
 
-    width: 100%;
-    height: 85px;
+        /* ================= PARTY BANNER ================= */
 
-    display: flex;
-    justify-content: center;
+        .party-banner {
+            position: fixed;
 
-    z-index: 5;
+            top: 0;
+            left: 0;
 
-    pointer-events: none;
-    overflow: hidden;
-}
+            width: 100%;
+            height: 75px;
 
-.party-banner .triangle {
-    width: 0;
-    height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
 
-    border-left: 32px solid transparent;
-    border-right: 32px solid transparent;
-    border-top: 55px solid;
+            z-index: 9999;
 
-    margin-top: -2px;
-}
+            pointer-events: none;
+        }
 
-/* Different blue shades */
+        .party-banner .triangle {
+            width: 55px;
+            height: 60px;
 
-.party-banner .triangle:nth-child(1) {
-    border-top-color: #123d70;
-}
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                50% 100%
+            );
 
-.party-banner .triangle:nth-child(2) {
-    border-top-color: #2d6fa8;
-}
+            margin: 0 2px;
+        }
 
-.party-banner .triangle:nth-child(3) {
-    border-top-color: #75aee0;
-}
 
-.party-banner .triangle:nth-child(4) {
-    border-top-color: #1c568c;
-}
+        /* Blue shades */
 
-.party-banner .triangle:nth-child(5) {
-    border-top-color: #a8d5f5;
-}
+        .party-banner .triangle:nth-child(1) {
+            background: #123d70;
+        }
 
-.party-banner .triangle:nth-child(6) {
-    border-top-color: #3f83bd;
-}
+        .party-banner .triangle:nth-child(2) {
+            background: #2d6fa8;
+        }
 
-.party-banner .triangle:nth-child(7) {
-    border-top-color: #8fc5ed;
-}
+        .party-banner .triangle:nth-child(3) {
+            background: #75aee0;
+        }
 
-.party-banner .triangle:nth-child(8) {
-    border-top-color: #164a7a;
-}
+        .party-banner .triangle:nth-child(4) {
+            background: #1c568c;
+        }
 
-.party-banner .triangle:nth-child(9) {
-    border-top-color: #5b9bd0;
-}
+        .party-banner .triangle:nth-child(5) {
+            background: #a8d5f5;
+        }
 
-.party-banner .triangle:nth-child(10) {
-    border-top-color: #b9ddf7;
-}
+        .party-banner .triangle:nth-child(6) {
+            background: #3f83bd;
+        }
 
-.party-banner .triangle:nth-child(11) {
-    border-top-color: #245f95;
-}
+        .party-banner .triangle:nth-child(7) {
+            background: #8fc5ed;
+        }
 
-.party-banner .triangle:nth-child(12) {
-    border-top-color: #75aee0;
-}
+        .party-banner .triangle:nth-child(8) {
+            background: #164a7a;
+        }
 
-.party-banner .triangle:nth-child(13) {
-    border-top-color: #2d6fa8;
-}
+        .party-banner .triangle:nth-child(9) {
+            background: #5b9bd0;
+        }
 
-.party-banner .triangle:nth-child(14) {
-    border-top-color: #a8d5f5;
-}
+        .party-banner .triangle:nth-child(10) {
+            background: #b9ddf7;
+        }
 
-.party-banner .triangle:nth-child(15) {
-    border-top-color: #164a7a;
-}
+        .party-banner .triangle:nth-child(11) {
+            background: #245f95;
+        }
+
+        .party-banner .triangle:nth-child(12) {
+            background: #75aee0;
+        }
+
+        .party-banner .triangle:nth-child(13) {
+            background: #2d6fa8;
+        }
+
+        .party-banner .triangle:nth-child(14) {
+            background: #a8d5f5;
+        }
+
+        .party-banner .triangle:nth-child(15) {
+            background: #164a7a;
+        }
+
 
         /* ================= MAIN CONTENT ================= */
 
         .content {
             position: relative;
+
             z-index: 10;
 
             width: min(700px, 100%);
+
             margin: 0 auto;
         }
 
@@ -232,9 +363,11 @@
 
         .small-title {
             position: relative;
+
             z-index: 30;
 
             font-size: 16px;
+
             letter-spacing: 4px;
 
             opacity: .75;
@@ -250,14 +383,18 @@
 
         .photo-area {
             position: relative;
+
             width: 320px;
             height: 320px;
+
             margin: 0 auto;
         }
 
         .big-star {
             position: absolute;
+
             color: white;
+
             font-size: 28px;
 
             text-shadow:
@@ -302,15 +439,16 @@
             transform: translateX(-50%);
 
             border-radius: 50%;
+
             overflow: hidden;
 
             background: #071b38;
 
-            border: 5px solid rgba(210,235,255,.9);
+            border: 5px solid rgba(210, 235, 255, .9);
 
             box-shadow:
-                0 0 20px rgba(130,200,255,.5),
-                0 0 50px rgba(70,150,230,.2);
+                0 0 20px rgba(130, 200, 255, .5),
+                0 0 50px rgba(70, 150, 230, .2);
 
             z-index: 10;
         }
@@ -338,7 +476,9 @@
             left: 50%;
             top: -75px;
 
-            transform: translateX(-50%) rotate(-7deg);
+            transform:
+                translateX(-50%)
+                rotate(-7deg);
 
             border-left: 58px solid transparent;
             border-right: 58px solid transparent;
@@ -349,8 +489,8 @@
             pointer-events: none;
 
             filter:
-                drop-shadow(0 5px 8px rgba(0,0,0,.4))
-                drop-shadow(0 0 8px rgba(120,190,255,.4));
+                drop-shadow(0 5px 8px rgba(0, 0, 0, .4))
+                drop-shadow(0 0 8px rgba(120, 190, 255, .4));
         }
 
         .hat::before {
@@ -386,11 +526,11 @@
 
             box-shadow:
                 0 0 12px white,
-                0 0 25px rgba(180,220,255,.8);
+                0 0 25px rgba(180, 220, 255, .8);
         }
 
 
-        /* ================= BIRTHDAY CAKE AREA ================= */
+        /* ================= CAKE AREA ================= */
 
         .cake-area {
             position: relative;
@@ -417,17 +557,18 @@
             left: 37px;
             top: 10px;
 
-            background: linear-gradient(
-                to bottom,
-                #8fc5ed,
-                #4d8fc9
-            );
+            background:
+                linear-gradient(
+                    to bottom,
+                    #8fc5ed,
+                    #4d8fc9
+                );
 
             border-radius: 8px 8px 12px 12px;
 
             box-shadow:
-                0 8px 18px rgba(0,0,0,.35),
-                0 0 15px rgba(100,180,240,.25);
+                0 8px 18px rgba(0, 0, 0, .35),
+                0 0 15px rgba(100, 180, 240, .25);
         }
 
         .cake-top {
@@ -501,7 +642,7 @@
             top: 34px;
             left: 0;
 
-            background: rgba(230,247,255,.5);
+            background: rgba(230, 247, 255, .5);
         }
 
 
@@ -545,22 +686,26 @@
 
             box-shadow:
                 0 0 8px #fff1a8,
-                0 0 18px rgba(255,220,100,.6);
+                0 0 18px rgba(255, 220, 100, .6);
 
-            animation: flicker .8s infinite alternate;
+            animation:
+                flicker .8s infinite alternate;
 
             transition:
-                opacity 0.5s ease,
-                transform 0.5s ease;
+                opacity .5s ease,
+                transform .5s ease;
         }
 
         .flame.out {
             opacity: 0;
+
             transform: scale(0);
+
             animation: none;
         }
 
         @keyframes flicker {
+
             from {
                 transform: scale(1);
             }
@@ -582,12 +727,12 @@
             left: 20px;
             top: 78px;
 
-            background: rgba(210,235,255,.85);
+            background: rgba(210, 235, 255, .85);
 
             border-radius: 50%;
 
             box-shadow:
-                0 6px 12px rgba(0,0,0,.25);
+                0 6px 12px rgba(0, 0, 0, .25);
         }
 
 
@@ -606,43 +751,56 @@
             padding: 13px 26px;
 
             font-family: 'Quicksand', sans-serif;
+
             font-size: 15px;
+
             font-weight: 600;
 
             white-space: nowrap;
 
             color: white;
 
-            background: rgba(70, 130, 190, 0.5);
+            background:
+                rgba(70, 130, 190, .65);
 
-            border: 1px solid rgba(190, 225, 255, 0.8);
+            border:
+                1px solid rgba(190, 225, 255, .9);
 
             border-radius: 30px;
 
             box-shadow:
-                0 0 12px rgba(120, 190, 255, 0.35),
-                0 0 25px rgba(80, 150, 220, 0.15);
+                0 0 12px rgba(120, 190, 255, .35),
+                0 0 25px rgba(80, 150, 220, .15);
 
             cursor: pointer;
 
             z-index: 50;
 
-            transition: all 0.3s ease;
+            transition:
+                all .3s ease;
         }
 
         #blowButton:hover {
-            transform: translateX(-50%) translateY(-3px);
+            transform:
+                translateX(-50%)
+                translateY(-3px);
 
-            background: rgba(90, 160, 220, 0.5);
+            background:
+                rgba(90, 160, 220, .7);
 
             box-shadow:
-                0 0 18px rgba(150, 210, 255, 0.7),
-                0 0 35px rgba(100, 180, 240, 0.3);
+                0 0 18px rgba(150, 210, 255, .7),
+                0 0 35px rgba(100, 180, 240, .3);
         }
 
         #blowButton:active {
-            transform: translateX(-50%) scale(0.96);
+            transform:
+                translateX(-50%)
+                scale(.96);
         }
+
+
+        /* ================= BLOW MESSAGE ================= */
 
         #blowMessage {
             position: absolute;
@@ -655,12 +813,13 @@
             margin: 0;
 
             font-size: 14px;
+
             letter-spacing: 1px;
 
             color: #d8efff;
 
             text-shadow:
-                0 0 8px rgba(150, 210, 255, 0.6);
+                0 0 8px rgba(150, 210, 255, .6);
         }
 
 
@@ -672,20 +831,23 @@
             display: block;
 
             width: min(650px, 95%);
+
             max-width: 650px;
 
             margin: 0 auto;
 
             padding: 35px 30px;
 
-            background: rgba(255, 255, 255, 0.97);
+            background:
+                rgba(255, 255, 255, .97);
 
-            border: 1px solid rgba(180, 215, 240, .8);
+            border:
+                1px solid rgba(180, 215, 240, .8);
 
             border-radius: 18px;
 
             box-shadow:
-                0 15px 40px rgba(0,0,0,.3);
+                0 15px 40px rgba(0, 0, 0, .3);
 
             direction: rtl;
 
@@ -724,7 +886,21 @@
         @media (max-width: 600px) {
 
             body {
-                padding: 30px 15px 60px;
+                padding:
+                    30px
+                    15px
+                    60px;
+            }
+
+            .party-banner {
+                height: 60px;
+            }
+
+            .party-banner .triangle {
+                width: 35px;
+                height: 45px;
+
+                margin: 0 1px;
             }
 
             .moon {
@@ -747,6 +923,8 @@
 
                 letter-spacing: 3px;
 
+                margin-top: 35px;
+
                 margin-bottom: 35px;
             }
 
@@ -758,17 +936,6 @@
             }
 
             .cake-area {
-                position: relative;
-
-                width: 220px;
-                height: 200px;
-
-                margin: 0 auto 30px;
-
-                text-align: center;
-
-                z-index: 20;
-
                 transform: scale(.9);
             }
 
@@ -795,6 +962,30 @@
 
 
 <body>
+
+
+    <!-- ================= PARTY BANNER ================= -->
+
+    <div class="party-banner">
+
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+
+    </div>
+
 
     <!-- ================= BACKGROUND STARS ================= -->
 
@@ -833,6 +1024,9 @@
 
     <main class="content">
 
+
+        <!-- ================= SMALL TITLE ================= -->
+
         <div class="small-title">
             a little something for you
         </div>
@@ -843,19 +1037,32 @@
         <div class="photo-area">
 
             <div class="big-star one">✦</div>
+
             <div class="big-star two">✧</div>
+
             <div class="big-star three">✦</div>
+
             <div class="big-star four">✧</div>
 
+
+            <!-- Birthday Hat -->
+
             <div class="hat">
+
                 <div class="hat-ball"></div>
+
             </div>
 
+
+            <!-- Photo -->
+
             <div class="photo-frame">
+
                 <img
                     src="./photo.png"
                     alt="Bader"
                 >
+
             </div>
 
         </div>
@@ -865,27 +1072,42 @@
 
         <div class="cake-area">
 
+
             <div class="cake">
 
                 <div class="cake-top"></div>
 
                 <div class="frosting"></div>
 
+
+                <!-- Candle -->
+
                 <div class="candle">
+
                     <div class="flame"></div>
+
                 </div>
+
 
                 <div class="cake-line"></div>
 
             </div>
 
+
+            <!-- Plate -->
+
             <div class="cake-plate"></div>
+
+
+            <!-- Blow Button -->
 
             <button id="blowButton">
                 🎤 Blow out the candle
             </button>
 
+
             <p id="blowMessage"></p>
+
 
         </div>
 
@@ -894,19 +1116,26 @@
 
         <div class="letter">
 
+
             <div class="letter-title">
                 إلى محبوبي وشريك عمري
             </div>
 
+
             <div class="letter-text">
 
-                كل عام وانت بخير يامن اختصر الحب كله في عينيه، وجعل لحياتي طعماً لا يشبه الا حضوره.
-                في مثل هذا اليوم، لم يولد رجل عادي، بل ولد النصيب الاجمل، والسند الاقوى، والحبيب الذي لا يشبهه احد.
-                وأسال الله ان نبقى معاً تحت ظل هذا الحب لأيام، شهور، ولاعوام لا تُعد
+                كل عام وانت بخير يامن اختصر الحب كله في عينيه،
+                وجعل لحياتي طعماً لا يشبه الا حضوره.
+                في مثل هذا اليوم، لم يولد رجل عادي،
+                بل ولد النصيب الاجمل، والسند الاقوى،
+                والحبيب الذي لا يشبهه احد.
+                وأسأل الله ان نبقى معاً تحت ظل هذا الحب
+                لأيام، شهور، ولأعوام لا تُعد.
 
             </div>
 
         </div>
+
 
     </main>
 
@@ -915,83 +1144,132 @@
 
     <script>
 
-        const blowButton = document.getElementById("blowButton");
-        const flame = document.querySelector(".flame");
-        const blowMessage = document.getElementById("blowMessage");
+        const blowButton =
+            document.getElementById("blowButton");
 
-        blowButton.addEventListener("click", async () => {
+        const flame =
+            document.querySelector(".flame");
 
-            try {
-
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    audio: true
-                });
-
-                const audioContext = new AudioContext();
-
-                const analyser = audioContext.createAnalyser();
-
-                const microphone =
-                    audioContext.createMediaStreamSource(stream);
-
-                microphone.connect(analyser);
-
-                analyser.fftSize = 256;
-
-                const data =
-                    new Uint8Array(analyser.frequencyBinCount);
-
-                blowMessage.textContent =
-                    "Blow into your microphone!";
+        const blowMessage =
+            document.getElementById("blowMessage");
 
 
-                function listenForBlow() {
+        blowButton.addEventListener(
+            "click",
+            async () => {
 
-                    analyser.getByteFrequencyData(data);
+                try {
 
-                    let total = 0;
-
-                    for (let i = 0; i < data.length; i++) {
-                        total += data[i];
-                    }
-
-                    const volume =
-                        total / data.length;
+                    const stream =
+                        await navigator.mediaDevices.getUserMedia({
+                            audio: true
+                        });
 
 
-                    if (volume > 60) {
+                    const audioContext =
+                        new (
+                            window.AudioContext ||
+                            window.webkitAudioContext
+                        )();
 
-                        flame.classList.add("out");
 
-                        blowMessage.textContent =
-                            "You blew out the candle!";
+                    const analyser =
+                        audioContext.createAnalyser();
 
-                        stream.getTracks().forEach(
-                            track => track.stop()
+
+                    const microphone =
+                        audioContext.createMediaStreamSource(
+                            stream
                         );
 
-                        return;
+
+                    microphone.connect(analyser);
+
+
+                    analyser.fftSize = 256;
+
+
+                    const data =
+                        new Uint8Array(
+                            analyser.frequencyBinCount
+                        );
+
+
+                    blowMessage.textContent =
+                        "Blow into your microphone! 💨";
+
+
+                    function listenForBlow() {
+
+                        analyser.getByteFrequencyData(data);
+
+
+                        let total = 0;
+
+
+                        for (
+                            let i = 0;
+                            i < data.length;
+                            i++
+                        ) {
+
+                            total += data[i];
+
+                        }
+
+
+                        const volume =
+                            total / data.length;
+
+
+                        if (volume > 60) {
+
+                            flame.classList.add("out");
+
+
+                            blowMessage.textContent =
+                                "🎉 You blew out the candle!";
+
+
+                            stream
+                                .getTracks()
+                                .forEach(
+                                    track => track.stop()
+                                );
+
+
+                            audioContext.close();
+
+
+                            return;
+
+                        }
+
+
+                        requestAnimationFrame(
+                            listenForBlow
+                        );
+
                     }
 
 
-                    requestAnimationFrame(listenForBlow);
+                    listenForBlow();
+
+
+                } catch (error) {
+
+                    blowMessage.textContent =
+                        "Please allow microphone access 🎤";
+
+                    console.error(error);
+
                 }
 
-
-                listenForBlow();
-
-            } catch (error) {
-
-                blowMessage.textContent =
-                    "Please allow microphone access 🎤";
-
-                console.error(error);
-
             }
-
-        });
+        );
 
     </script>
+
 
 </body>
 
