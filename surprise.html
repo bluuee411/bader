@@ -942,7 +942,7 @@
                     new Uint8Array(analyser.frequencyBinCount);
 
                 blowMessage.textContent =
-                    "Blow into your microphone! 💨";
+                    "Blow into your microphone!";
 
 
                 function listenForBlow() {
@@ -964,7 +964,7 @@
                         flame.classList.add("out");
 
                         blowMessage.textContent =
-                            "🎉 You blew out the candle!";
+                            "You blew out the candle!";
 
                         stream.getTracks().forEach(
                             track => track.stop()
